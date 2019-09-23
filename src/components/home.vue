@@ -1,12 +1,16 @@
 <template>
     <div id = "head">
-        <van-icon size="32px" name="arrow-left" @click="toLast()"></van-icon>
+        <Display title="全部时间" activeNames="whole"></Display>
+        <Display title="早间习惯" activeNames="morning"></Display>
+        <Display title="午间习惯" activeNames="noon"></Display>
+        <Display title="晚间习惯" activeNames="night"></Display>
     </div>
 </template>
 
 <script>
     import Vue from 'vue';
     import { Icon } from 'vant';
+    import Display from './display'
     Vue.use(Icon);
 
     export default {
@@ -20,15 +24,16 @@
             toLast: function () {
                 this.$router.go(-1);
             }
+        },
+        components: {
+            Display
         }
     }
 </script>
 
 <style scoped>
     #head{
-        float: left;
-        margin-top:10px;
-        margin-left: 6px;
-        height: 44px;
+        margin: 0 auto;
+        padding: 0 auto;
     }
 </style>

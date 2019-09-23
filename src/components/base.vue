@@ -1,6 +1,5 @@
 <template>
   <div id = "Base">
-    <HeadBar></HeadBar>
     <router-view></router-view>
     <van-tabbar v-model="active">
       <van-tabbar-item name="home" icon="home-o" to="/">主页</van-tabbar-item>
@@ -14,7 +13,6 @@
   import Vue from 'vue';
   import { Tabbar, TabbarItem } from 'vant';
 
-  import HeadBar from "./headBar"
 
   Vue.use(Tabbar).use(TabbarItem);
   export default {
@@ -24,9 +22,6 @@
         active: 'home'
       }
     },
-    components: {
-      HeadBar : HeadBar
-    }
   }
 </script>
 
