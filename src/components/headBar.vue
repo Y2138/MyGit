@@ -1,6 +1,6 @@
 <template>
     <div id = "head">
-        <van-icon name="arrow-left" @click="toLast()"></van-icon>
+        <van-icon size="32px" name="arrow-left" @click="toLast()"></van-icon>
     </div>
 </template>
 
@@ -27,6 +27,8 @@
 <style scoped>
     #head{
         float: left;
-        height: 12px;
+        margin-top:10px;
+        margin-left: 6px;
+        height: 44px;
     }
 </style>
