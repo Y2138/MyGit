@@ -1,31 +1,38 @@
 <template>
-    <div id = "head">
-        <Display title="全部时间" activeNames="whole"></Display>
-        <Display title="早间习惯" activeNames="morning"></Display>
-        <Display title="午间习惯" activeNames="noon"></Display>
-        <Display title="晚间习惯" activeNames="night"></Display>
+    <div id = "home">
+        <van-search shape="round" placeholder = "输入习惯名称"></van-search>
+        <Display get-title="全部时间" activeNames="whole">
+            <habits></habits>
+        </Display>
+        <Display get-title="早间习惯" get-active-name="morning">
+            <habits></habits>
+        </Display>
+        <Display get-title="午间习惯" get-active-name="noon">
+            <habits></habits>
+        </Display>
+        <Display get-title="晚间习惯" get-active-name="night">
+            <habits></habits>
+        </Display>
     </div>
 </template>
 
 <script>
     import Vue from 'vue';
-    import { Icon } from 'vant';
+    import { Row, Col, Icon, Search } from 'vant';
     import Display from './display'
-    Vue.use(Icon);
+    import Habits from "@/components/habits";
+
+    Vue.use(Row).use(Col).use(Icon).use(Search);
 
     export default {
-        name: "head",
+        name: "home",
         data () {
             return {
 
             }
         },
-        methods: {
-            toLast: function () {
-                this.$router.go(-1);
-            }
-        },
         components: {
+            Habits,
             Display
         }
     }

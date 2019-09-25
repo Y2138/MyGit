@@ -5,7 +5,7 @@ import Home from '../../components/home'
 
 
 export default [
-    { path: '/', component: Base },
+    { path: '/', redirect: '/base/home'},
     { path: '/base', component: Base,
         children: [
             {
@@ -18,11 +18,9 @@ export default [
             },
             {
                 path: 'home',
-                component: Home
+                component: Home,
+                //name: 'home',
             }
         ]
     },
-    { path: '/login', component: Login },
-    { path: '/registe', component: Registe },
-    { path: '/home', component: Home},
 ]

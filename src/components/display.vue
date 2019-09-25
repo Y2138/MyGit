@@ -1,9 +1,9 @@
 <template>
-    <div id = "head">
-        <van-collapse v-model="activeNames" accordion>
+    <div id = "display">
+        <van-collapse v-model="activeName" accordion>
             <van-collapse-item :title="title">
                 <div class="content">
-                    你说啥
+                    <slot></slot>
                 </div>
             </van-collapse-item>
         </van-collapse>
@@ -16,13 +16,17 @@
     Vue.use(Icon).use(Collapse).use(CollapseItem);
 
     export default {
-        name: "head",
+        name: "display",
         data () {
             return {
-
+                title: this.getTitle,
+                activeName: this.getActiveName
             }
         },
-        props: ['title','activeNames'],
+        props: {
+            getTitle: String,
+            getActiveName: String
+        },
         methods: {
 
         }
@@ -30,7 +34,7 @@
 </script>
 
 <style scoped>
-    #head{
+    #display{
         margin: 10px 4px 0;
         width: 100%;
         height: 100%;
