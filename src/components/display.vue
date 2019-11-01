@@ -36,7 +36,6 @@
 <style scoped>
     #display{
         margin: 10px 4px 0;
-        width: 100%;
         height: 100%;
     }
     .content{

@@ -47,7 +47,7 @@
 
 <style scoped>
     .login_content{
-        width: 400px;
+        width: 100%;
         height: 200px;
     }
     .btn_width{

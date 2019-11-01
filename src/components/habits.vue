@@ -37,7 +37,7 @@
     }
     .habit{
         height: 100px;
-        width: 100px;
+        width: 33.3%;
         padding: 12px;
         text-align: center;
     }

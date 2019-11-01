@@ -26,5 +26,8 @@
 </script>
 
 <style scoped>
+  #Base{
+    width: 100%;
+  }
 
 </style>

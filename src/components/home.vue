@@ -40,6 +40,8 @@
 
 <style scoped>
     #head{
+        width: 100%;
+        height: 100%;
         margin: 0 auto;
         padding: 0 auto;
     }
