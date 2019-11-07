@@ -2,6 +2,7 @@ import Login from '../../components/login'
 import Registe from '../../components/registe'
 import Base from '../../components/base'
 import Home from '../../components/home'
+import Ajax from '../../components/ajax'
 
 
 export default [
@@ -23,4 +24,5 @@ export default [
             }
         ]
     },
+    {path: '/ajax', component: Ajax}
 ]

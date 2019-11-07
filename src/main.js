@@ -3,6 +3,7 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 
 //import js
+import '@/mock/mock.js'
 import routes from './js/router/routes'
 
 //import css
