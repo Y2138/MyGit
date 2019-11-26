@@ -3,7 +3,7 @@
         <van-nav-bar class="nav-head">
             <van-icon name="like-o" slot="left" />
             <van-search shape="round" placeholder = "输入习惯名称" slot="title"></van-search>
-            <van-icon name="clock-o" slot="right" />
+            <van-icon @click = "logStatus" slot="right"> {{ userInfo.userName }} </van-icon>
         </van-nav-bar>
         <van-collapse v-model = "activeName">
             <van-collapse-item v-for="item in titleItem" :key="item.name" :name = item.name :title = item.title>
@@ -17,6 +17,7 @@
     import Vue from 'vue';
     import { Row, Col, Icon, Search, NavBar, Collapse, CollapseItem } from 'vant';
     import Habits from "@/components/habits";
+    import { mapState } from 'vuex';
 
     Vue.use(Row).use(Col).use(Icon).use(Search).use(NavBar).use(Collapse).use(CollapseItem);
 
@@ -41,8 +42,18 @@
         components: {
             Habits
         },
-        created() {
+        methods: {
+            logStatus: function() {
+                if (this.userInfo.userName == '未登录') {
+                    this.$router.push('profile');
+                } else {
+                    this.$router.push('/');
+                }
+            }
 
+        },
+        computed: {
+            ...mapState(['userInfo']),
         }
     }
 </script>

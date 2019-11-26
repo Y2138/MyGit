@@ -5,6 +5,7 @@ import VueRouter from 'vue-router'
 //import js
 import '@/mock/mock.js'
 import routes from './router/routes'
+import store from './store'
 
 //import css
 
@@ -18,5 +19,6 @@ const router = new VueRouter({
 
 new Vue({
   router,
+  store,
   render: h => h(App),
 }).$mount('#app')

@@ -30,6 +30,7 @@
     import Vue from 'vue';
     import axios from 'axios';
     import url from '../service.config'
+    import { mapActions } from 'vuex'
     import {CellGroup, Toast ,Field, Button, Tab, Tabs } from 'vant';
     Vue.use(CellGroup).use(Field).use(Button).use(Tab).use(Tabs).use(Toast);
     export default {
@@ -45,6 +46,7 @@
             }
         },
         methods: {
+            ...mapActions(['loginAction']),
             loginHandle() {
                 axios({
                     url: url.loginUser,
@@ -55,12 +57,15 @@
                     }
                 }).then(res => {
                     if (res.data.code === 200) {
+                        // 模拟延时
                         new Promise((resolve, reject) => {
                             setTimeout(() => {
                                 resolve();
                             }, 1000);
                         }).then(()=> {
                             Toast.success('登录成功');
+                            // 保存登录状态
+                            this.loginAction(res.data.userInfo);
                             this.$router.push('/');
                         }).catch(err => {
                             Toast.fail('保存登录状态失败');
