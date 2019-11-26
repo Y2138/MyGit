@@ -7,9 +7,7 @@
         </van-nav-bar>
         <van-collapse v-model = "activeName">
             <van-collapse-item v-for="item in titleItem" :key="item.name" :name = item.name :title = item.title>
-                <div class="content">
-                    <Habits></Habits>
-                </div>
+                <Habits></Habits>
             </van-collapse-item>
         </van-collapse>
     </div>
@@ -17,7 +15,6 @@
 
 <script>
     import Vue from 'vue';
-    import Axios from 'axios';
     import { Row, Col, Icon, Search, NavBar, Collapse, CollapseItem } from 'vant';
     import Habits from "@/components/habits";
 
@@ -45,17 +42,7 @@
             Habits
         },
         created() {
-            // Axios.get('https://bird.ioliu.cn/v2?url=https://api.douban.com/v2/movie/top250').then(res => {
-            //     console.log(res);
-            // })
-            let url1 = 'http://www.woaini.com/regexp';
-            let url2 = 'http://www.woaini.com/getUser';
-            let url3 = 'http://www.woaini.com/getList';
-            let url4 = 'http://www.woaini.com/list';
-            let url5 = 'http://www.woaini.com/getHabit';
-            Axios.get(url5).then(res => {
-                console.log(res);
-            })
+
         }
     }
 </script>
@@ -66,6 +53,8 @@
     top: 0;
     left: 0;
     width: 100%;
+    height: 54px;
+    margin-bottom: 1rem;
     z-index: 999!important;
 }
 </style>

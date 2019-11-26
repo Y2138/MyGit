@@ -26,12 +26,12 @@ Mock.mock('http://www.woaini.com/list', {
 });
 
 let Random = Mock.Random;
-let habitData = req => {
+let habitData = function() {
     let habitList = []; //存放习惯信息的数组
     for (let i=0; i<20; i++) {
         let habit = {
-            name: Random.ctitle(5,20),
-            img: Random.dataImage('125x125'),
+            name: Random.ctitle(2,10),
+            img: Random.dataImage('100x100'),
             owner: Random.cname()
         }
         habitList.push(habit);

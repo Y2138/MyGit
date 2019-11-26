@@ -4,7 +4,7 @@ import VueRouter from 'vue-router'
 
 //import js
 import '@/mock/mock.js'
-import routes from './js/router/routes'
+import routes from './router/routes'
 
 //import css
 
